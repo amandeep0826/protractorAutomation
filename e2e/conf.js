@@ -12,10 +12,10 @@ exports.config = {
 
   // Spec patterns are relative to the current working directory when
   // protractor is called.
-  specs: ["../e2e/tests/calculator.js"],
+  specs: ["../e2e/tests/calculator.spec.js"],
 
   onPrepare: async () => {
-    global.globalVariables = require("../e2e/helper/globalVariables");
+    global.globalVariables = require("./helper/constants");
   },
 
   // Options to be passed to Jasmine.
