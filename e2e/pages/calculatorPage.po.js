@@ -10,6 +10,9 @@ var calculatorPage = function () {
   this.setSecondNumber = function (num2) {
     secondNumber.sendKeys(num2);
   };
+  this.setOperator = function (operatorString) {
+    element(by.cssContainingText("option", operatorString)).click();
+  };
 
   this.clickOnGoButton = function () {
     goButton.click();
