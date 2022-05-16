@@ -2,6 +2,9 @@ const constants = require("../helper/constants");
 const registrationPagePo = require("../pages/registrationPage.po");
 
 describe("login page test ", () => {
+  beforeAll(() => {
+    browser.manage().window().maximize();
+  });
   beforeEach(() => {
     browser.get(constants.registrationSiteUrl);
   });

@@ -12,7 +12,7 @@ exports.config = {
 
   // Spec patterns are relative to the current working directory when
   // protractor is called.
-  specs: ["../e2e/tests/registration.spec.js"],
+  specs: ["../e2e/tests/multiForm.spec.js"],
 
   onPrepare: async () => {
     global.globalVariables = require("./helper/constants");
