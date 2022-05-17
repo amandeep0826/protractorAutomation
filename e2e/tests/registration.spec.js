@@ -34,4 +34,16 @@ describe("login page test ", () => {
 
     browser.sleep(3000);
   });
+  it("login with incorrect credentials failed test", () => {
+    registrationPagePo.setUsername("angular1");
+    registrationPagePo.setRequiredUsername("angular");
+    registrationPagePo.setPassword("password");
+    registrationPagePo.clickOnLoginButton();
+
+    expect(registrationPagePo.getLoginErrorText()).toEqual(
+      "You're logged in!!"
+    );
+
+    browser.sleep(3000);
+  });
 });

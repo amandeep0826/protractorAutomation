@@ -12,10 +12,16 @@ exports.config = {
 
   // Spec patterns are relative to the current working directory when
   // protractor is called.
-  specs: ["../e2e/tests/multiForm.spec.js"],
+  specs: ["../e2e/tests/registration.spec.js"],
 
-  onPrepare: async () => {
+  onPrepare: () => {
     global.globalVariables = require("./helper/constants");
+    var AllureReporter = require("jasmine-allure-reporter");
+    jasmine.getEnv().addReporter(
+      new AllureReporter({
+        resultsDir: "allure-results",
+      })
+    );
   },
 
   // Options to be passed to Jasmine.
