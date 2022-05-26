@@ -31,13 +31,12 @@ describe("Complete Payment Workflow", () => {
     termsAndConditionsPagePo.selectTermsAndConditionsCheckbox();
     termsAndConditionsPagePo.clickOnSubmitButton();
     paymentPreviewPagePo.clickOnSubmitButton();
-    browser.sleep(3000);
+    // browser.sleep(3000);
 
-    expect(successfulPaymentPagePo.getsuccessfulReceiptPageTitle()).toEqual(
-      "Thank you for your payment",
-
-      "Please print this receipt and keep it for your records."
+    expect(successfulPaymentPagePo.getsuccessfulReceiptPageTitle()).toMatch(
+      "Thank you for your payment.\n\n" +
+        "Please print this receipt and keep it for your records."
     );
-    browser.sleep(3000);
+    // browser.sleep(3000);
   });
 });
