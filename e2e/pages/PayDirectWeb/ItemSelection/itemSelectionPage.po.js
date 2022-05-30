@@ -1,3 +1,5 @@
+const { element, by } = require("protractor");
+
 var itemSelectionPage = function () {
   const lineItemIsSelectionCheckbox = element(
     by.id("CartUserInput_LineItems_0__IsSelected")

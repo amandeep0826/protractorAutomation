@@ -7,4 +7,6 @@ module.exports = {
   testText: "Hello, I'm test text value",
   PDWebInflightMerchant:
     "https://paydirectd.qa.link2gov.com/PAYDR-GARIMA-TEST1-W/Test/?merchantCode=PAYDR-GARIM-DEMO1-W",
+  PDWebPassthroughMerchant:
+    "https://paydirectd.qa.link2gov.com/PAYDR-GARIM-DEMO2-W/Test/?merchantCode=PAYDR-GARIM-DEMO2-W",
 };
