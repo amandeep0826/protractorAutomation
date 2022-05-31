@@ -13,12 +13,12 @@ describe("Complete Payment Workflow", () => {
     browser.manage().window().maximize();
     // jasmine.DEFAULT_TIMEOUT_INTERVAL = 3000;
   });
-  beforeEach(() => {
-    // browser.get(constants.PDWebInflightMerchant);
-    // connectionIsNotPrivatePagePo.clickOnAdvancedButton();
-    // connectionIsNotPrivatePagePo.proceedLinkButton();
-    // submitFormPagePo.clickOnTestPageButton();
-  });
+  // beforeEach(() => {
+  //   // browser.get(constants.PDWebInflightMerchant);
+  //   // connectionIsNotPrivatePagePo.clickOnAdvancedButton();
+  //   // connectionIsNotPrivatePagePo.proceedLinkButton();
+  //   // submitFormPagePo.clickOnTestPageButton();
+  // });
   it("Successful Payment Workflow for Inflight", async () => {
     await browser.get(constants.PDWebInflightMerchant);
     connectionIsNotPrivatePagePo.clickOnAdvancedButton();

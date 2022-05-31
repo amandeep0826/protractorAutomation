@@ -12,21 +12,21 @@ exports.config = {
 
   // Spec patterns are relative to the current working directory when
   // protractor is called.
-  specs: ["../e2e/tests/PayDirectWeb/paymentWorkflow.spec.js"],
+  specs: ["../e2e/tests/PayDirectWeb/lineItems.spec.js"],
 
   onPrepare: () => {
     global.globalVariables = require("./helper/constants");
     browser.ignoreSynchronization = true;
-    // var AllureReporter = require("jasmine-allure-reporter");
-    // jasmine.getEnv().addReporter(
-    //   new AllureReporter({
-    //     resultsDir: "allure-results",
-    //   })
-    // );
+    var AllureReporter = require("jasmine-allure-reporter");
+    jasmine.getEnv().addReporter(
+      new AllureReporter({
+        resultsDir: "allure-results",
+      })
+    );
   },
 
   // Options to be passed to Jasmine.
   jasmineNodeOpts: {
-    defaultTimeoutInterval: 30000,
+    defaultTimeoutInterval: 1440000,
   },
 };
