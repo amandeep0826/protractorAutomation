@@ -12,7 +12,10 @@ exports.config = {
 
   // Spec patterns are relative to the current working directory when
   // protractor is called.
-  specs: ["../e2e/tests/PayDirectWeb/lineItems.spec.js"],
+  specs: [
+    "../e2e/tests/PayDirectWeb/successfulPayment.spec.js",
+    "../e2e/tests/PayDirectWeb/lineItems.spec.js",
+  ],
 
   onPrepare: () => {
     global.globalVariables = require("./helper/constants");

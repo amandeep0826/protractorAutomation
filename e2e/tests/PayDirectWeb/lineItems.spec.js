@@ -10,13 +10,25 @@ describe("Line Item selection Test Cases", () => {
   });
   it("Click on Submit Button without selecting any line items", async () => {
     await browser.get(constants.PDWebInflightMerchant);
-    connectionIsNotPrivatePagePo.clickOnAdvancedButton();
-    connectionIsNotPrivatePagePo.proceedLinkButton();
+    // connectionIsNotPrivatePagePo.clickOnAdvancedButton();
+    // connectionIsNotPrivatePagePo.proceedLinkButton();
     submitFormPagePo.clickOnTestPageButton();
     itemSelectionPagePo.clickOnSubmitButton();
 
-    await expect(
-      itemSelectionPagePo.getWithoutSelectingLineItemErrorText()
-    ).toEqual("Please select at least one item");
+    await expect(itemSelectionPagePo.lineItemErrorText()).toEqual(
+      "Please select at least one item"
+    );
+  });
+
+  it("Exceed the max payment amount by increasing quantity of line item", async () => {
+    await browser.get(constants.PDWebInflightMerchant);
+    submitFormPagePo.clickOnTestPageButton();
+    itemSelectionPagePo.checkLineItemIsSelectionCheckbox();
+    itemSelectionPagePo.setLineItemIsSelectionQuantity("15");
+    itemSelectionPagePo.clickOnSubmitButton();
+
+    await expect(itemSelectionPagePo.lineItemErrorText()).toEqual(
+      "Payment amount must not exceed $13.95"
+    );
   });
 });

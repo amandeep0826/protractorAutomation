@@ -5,8 +5,11 @@ var itemSelectionPage = function () {
     by.id("CartUserInput_LineItems_0__IsSelected")
   );
   const submitButton = element(by.id("SubmitButton"));
-  const withoutSelectingLineItemErrorText = element(
+  const lineItemErrorText = element(
     by.xpath('//*[@id="content"]/div[2]/ul/li')
+  );
+  const lineItemIsSelectionQuantity = element(
+    by.id("CartUserInput_LineItems_0__SubFields_0__Value")
   );
   this.checkLineItemIsSelectionCheckbox = () => {
     lineItemIsSelectionCheckbox.click();
@@ -14,8 +17,11 @@ var itemSelectionPage = function () {
   this.clickOnSubmitButton = () => {
     submitButton.click();
   };
-  this.getWithoutSelectingLineItemErrorText = () => {
-    return withoutSelectingLineItemErrorText.getText();
+  this.lineItemErrorText = () => {
+    return lineItemErrorText.getText();
+  };
+  this.setLineItemIsSelectionQuantity = (amount) => {
+    lineItemIsSelectionQuantity.sendKeys(amount);
   };
 };
 
