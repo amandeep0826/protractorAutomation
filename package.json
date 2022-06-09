@@ -1,0 +1,24 @@
+{
+  "name": "protractorautomationproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jasmine-spec-reporter": "^7.0.0",
+    "protractor": "^7.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amandeep0826/protractorAutomation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amandeep0826/protractorAutomation/issues"
+  },
+  "homepage": "https://github.com/amandeep0826/protractorAutomation#readme"
+}
