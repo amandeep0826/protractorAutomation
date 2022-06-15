@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "jasmine-spec-reporter": "^7.0.0",
-    "protractor": "^7.0.0"
+    "protractor": "^7.0.0",
+    "jasmine-allure-reporter": "^1.0.2"
   },
   "devDependencies": {},
   "scripts": {
