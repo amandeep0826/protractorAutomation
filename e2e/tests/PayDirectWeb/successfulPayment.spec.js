@@ -47,6 +47,7 @@ describe("Complete Payment Workflow", () => {
     await browser.get(constants.PDWebPassthroughMerchant);
     // connectionIsNotPrivatePagePo.clickOnAdvancedButton();
     // connectionIsNotPrivatePagePo.proceedLinkButton();
+
     submitFormPagePo.clickOnTestPageButton();
     itemSelectionPagePo.checkLineItemIsSelectionCheckbox();
     itemSelectionPagePo.clickOnSubmitButton();
@@ -58,7 +59,7 @@ describe("Complete Payment Workflow", () => {
     paymentPreviewPagePo.clickOnSubmitButton();
 
     await expect(successText.getText()).toEqual(
-      "The information you’re about to submit is not secure"
+      "Your connection is not private"
     );
   });
 });
