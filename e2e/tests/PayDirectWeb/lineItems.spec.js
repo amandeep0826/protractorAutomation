@@ -10,8 +10,8 @@ describe("Line Item selection Test Cases", () => {
   });
   it("Click on Submit Button without selecting any line items", async () => {
     await browser.get(constants.PDWebInflightMerchant);
-    // connectionIsNotPrivatePagePo.clickOnAdvancedButton();
-    // connectionIsNotPrivatePagePo.proceedLinkButton();
+    connectionIsNotPrivatePagePo.clickOnAdvancedButton();
+    connectionIsNotPrivatePagePo.proceedLinkButton();
     submitFormPagePo.clickOnTestPageButton();
     itemSelectionPagePo.clickOnSubmitButton();
 

@@ -1,12 +1,8 @@
+const PDWebQAMain = "https://paydirect.qa.link2gov.com";
+const PDWebDelta = "https://paydirectd.qa.link2gov.com";
+const PDWebURL = PDWebQAMain;
+
 module.exports = {
-  siteUrl: "http://juliemr.github.io/protractor-demo",
-  registrationSiteUrl:
-    "https://www.way2automation.com/angularjs-protractor/registeration/#/login",
-  multiFormSiteUrl:
-    "https://www.way2automation.com/angularjs-protractor/multiform/#/form/profile",
-  testText: "Hello, I'm test text value",
-  PDWebInflightMerchant:
-    "https://paydirectd.qa.link2gov.com/PAYDR-GARIMA-TEST1-W/Test/?merchantCode=PAYDR-GARIM-DEMO1-W",
-  PDWebPassthroughMerchant:
-    "https://paydirectd.qa.link2gov.com/PAYDR-GARIM-DEMO2-W/Test/?merchantCode=PAYDR-GARIM-DEMO2-W",
+  PDWebInflightMerchant: `${PDWebURL}/PAYDR-GARIMA-TEST1-W/Test/?merchantCode=PAYDR-GARIM-DEMO1-W`,
+  PDWebPassthroughMerchant: `${PDWebURL}/PAYDR-GARIM-DEMO2-W/Test/?merchantCode=PAYDR-GARIM-DEMO2-W`,
 };

@@ -20,7 +20,9 @@ describe("Complete Payment Workflow", () => {
   //   // submitFormPagePo.clickOnTestPageButton();
   // });
   it("Successful Payment Workflow for Inflight", async () => {
+    browser.sleep(5000);
     await browser.get(constants.PDWebInflightMerchant);
+    browser.sleep(5000);
     connectionIsNotPrivatePagePo.clickOnAdvancedButton();
     connectionIsNotPrivatePagePo.proceedLinkButton();
 
