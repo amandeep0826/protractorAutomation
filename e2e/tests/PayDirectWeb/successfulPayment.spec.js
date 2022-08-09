@@ -7,21 +7,16 @@ const paymentEntryPagePagePo = require("../../pages/PayDirectWeb/PaymentEntry/pa
 const termsAndConditionsPagePo = require("../../pages/PayDirectWeb/TermsAndConditions/termsAndConditionsPage.po");
 const paymentPreviewPagePo = require("../../pages/PayDirectWeb/PaymentPreview/paymentPreviewPage.po");
 const successfulPaymentPagePo = require("../../pages/PayDirectWeb/SuccessfulPayment/successfulPaymentPage.po");
+const urlHelper = require("../../helper/urlHelper");
 
 describe("Complete Payment Workflow", () => {
   beforeAll(() => {
     browser.manage().window().maximize();
-    // jasmine.DEFAULT_TIMEOUT_INTERVAL = 3000;
   });
-  // beforeEach(() => {
-  //   // browser.get(constants.PDWebInflightMerchant);
-  //   // connectionIsNotPrivatePagePo.clickOnAdvancedButton();
-  //   // connectionIsNotPrivatePagePo.proceedLinkButton();
-  //   // submitFormPagePo.clickOnTestPageButton();
-  // });
+
   it("Successful Payment Workflow for Inflight", async () => {
     browser.sleep(5000);
-    await browser.get(constants.PDWebInflightMerchant);
+    await browser.get(urlHelper.Inflight_TestMerchantUrl);
     browser.sleep(5000);
     connectionIsNotPrivatePagePo.clickOnAdvancedButton();
     connectionIsNotPrivatePagePo.proceedLinkButton();
@@ -46,7 +41,7 @@ describe("Complete Payment Workflow", () => {
 
   it("Successful Payment Workflow for Passthrough", async () => {
     const successText = element(by.xpath('//*[@id="main-message"]/h1'));
-    await browser.get(constants.PDWebPassthroughMerchant);
+    await browser.get(urlHelper.Passthrough_TestMerchantUrl);
     // connectionIsNotPrivatePagePo.clickOnAdvancedButton();
     // connectionIsNotPrivatePagePo.proceedLinkButton();
 
@@ -56,6 +51,7 @@ describe("Complete Payment Workflow", () => {
     paymentEntryPagePagePo.clickOnSwipePopupCancelButton();
     paymentEntryPagePagePo.setTestPaymentProfile("VISA");
     paymentEntryPagePagePo.clickOnSubmitButton();
+    browser.sleep(5000);
     termsAndConditionsPagePo.selectTermsAndConditionsCheckbox();
     termsAndConditionsPagePo.clickOnSubmitButton();
     paymentPreviewPagePo.clickOnSubmitButton();
