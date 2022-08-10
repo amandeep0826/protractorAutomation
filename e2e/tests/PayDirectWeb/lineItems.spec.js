@@ -9,13 +9,14 @@ const connectionIsNotPrivatePagePo = require("../../pages/PayDirectWeb/Connectio
 const itemSelectionPagePo = require("../../pages/PayDirectWeb/ItemSelection/itemSelectionPage.po");
 const submitFormPagePo = require("../../pages/PayDirectWeb/SubmitForm/submitFormPage.po");
 const urlHelper = require("../../helper/urlHelper");
+const environmentHelper = require("../../helper/environmentHelper");
 
 describe("Line Item selection Test Cases", () => {
   beforeAll(() => {
     browser.manage().window().maximize();
   });
   it("Click on Submit Button without selecting any line items", async () => {
-    await browser.get(urlHelper.Inflight_TestMerchantUrl);
+    await browser.get(environmentHelper.PDWeb_URL_Inflight);
     // connectionIsNotPrivatePagePo.clickOnAdvancedButton();
     // connectionIsNotPrivatePagePo.proceedLinkButton();
     submitFormPagePo.clickOnTestPageButton();
@@ -26,7 +27,7 @@ describe("Line Item selection Test Cases", () => {
   });
 
   it("Exceed the max payment amount by increasing quantity of line item", async () => {
-    await browser.get(urlHelper.Inflight_TestMerchantUrl);
+    await browser.get(environmentHelper.PDWeb_URL_Inflight);
     submitFormPagePo.clickOnTestPageButton();
     itemSelectionPagePo.checkLineItemIsSelectionCheckbox();
     itemSelectionPagePo.setLineItemIsSelectionQuantity("15");
